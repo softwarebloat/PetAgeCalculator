@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Pet age calculator</string>
+    <string name="action_settings">Impostazioni</string>
+    <string name="title_section1">Cane</string>
+    <string name="title_section2">Gatto</string>
+	<string name="edit_message">Anni</string>
+	<string name="button_calculate">Calcola</string>
+	<string name="human_age_text">Anni umani</string>
+	<string name="years_text_error">Inserisci gli anni</string>
+	<string name="bunny_text_error">Non riesco a calcolare...</string>
+	
+	<string-array name="animals">
+	    <item>Cane</item>
+	    <item>Gatto</item>
+	    <item>Coniglio</item>
+	    <item>Cavallo</item>
+	</string-array>
+	
+</resources>

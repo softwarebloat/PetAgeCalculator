@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Pet age calculator</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_section1">Dog</string>
+    <string name="title_section2">Cat</string>
+	<string name="edit_message">Years</string>
+	<string name="button_calculate">Calculate</string>
+	<string name="human_age_text">Human Age</string>
+	<string name="years_text_error">Insert an age</string>
+	<string name="bunny_text_error">Can\'t calculate...</string>
+
+	<string-array name="animals">
+	    <item>Dog</item>
+	    <item>Cat</item>
+	    <item>Rabbit</item>
+	    <item>Horse</item>
+	</string-array>
+
+
+</resources>
