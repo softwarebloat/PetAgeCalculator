@@ -130,18 +130,25 @@ public class MainActivity extends Activity {
 		
 		//if is bunny
 		else if(animal_type==2){
-			total = bunny_years[years-1];
+			if(years == 0)
+                total = 0;
+
+            else
+			    total = bunny_years[years-1];
 		}
 		
 		//if is horse
 		else if(animal_type==3){
-			if(years < 5){
+            if(years == 0){
+                total = 0;
+            }
+
+			if(years > 0 && years < 5){
 				total = horse_years[years-1];
 			}
 			
-			else{
+			else if(years > 5){
 				float adult = 2.5f;
-				
 				total = (int) (((years)-4) * adult + 20);
 			}
 		}
