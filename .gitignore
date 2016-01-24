@@ -34,4 +34,4 @@ captures/
 # Android Studio
 *.iml .idea
 .idea/workspace.xml - remove # and delete .idea if it better suit your needs.
-
+.idea/misc.xml
