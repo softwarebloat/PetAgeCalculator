@@ -1,59 +1,96 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1">
 
-    <TextView
-        android:id="@+id/textView1"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center_horizontal"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="100sp"
-        android:textColor="#ffffff" />
-            
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_above="@+id/human_age">
+
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="420dp"
+
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="100sp"
+            android:textColor="#ffffff"
+            android:gravity="center_horizontal" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/horizontalScrollView"
+            android:scrollbars="none">
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioButton android:id="@+id/radio_dog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="dog"
+                    android:onClick="RadioClicked"
+                    android:checked="true"/>
+
+                <RadioButton android:id="@+id/radio_cat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="cat"
+                    android:onClick="RadioClicked" />
+
+                <RadioButton android:id="@+id/radio_rabbit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="rabbit"
+                    android:onClick="RadioClicked"/>
+
+                <RadioButton android:id="@+id/radio_horse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="horse"
+                    android:onClick="RadioClicked"/>
+
+
+            </RadioGroup>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+
+
     <TextView
         android:id="@+id/human_age"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#ffffff"
-        android:paddingLeft="20dp" />
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="65dp"/>
 
-    <LinearLayout
+    <SeekBar
+        android:id="@+id/set_age"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="10sp" >
+        android:max="30"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp"/>
 
-              
-        <SeekBar
-            android:id="@+id/set_age"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:max="30"/>
-            android:progressDrawable="@drawable/white_seekbar_progress"
-            android:thumb="@drawable/white_seekbar_control" />
-              
-        <Spinner
-            android:id="@+id/choose_animal"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-                
-    </LinearLayout>
-    <Button
-        android:id="@+id/calc_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#5cb85c"
-        android:fontFamily="sans-serif-thin"
-        android:onClick="calculateYears"
-        android:text="@string/button_calculate"
-        android:textColor="#ffffff"
-        android:textSize="35sp"
-        android:textStyle="normal|bold" />
-</LinearLayout>
+
+</RelativeLayout>

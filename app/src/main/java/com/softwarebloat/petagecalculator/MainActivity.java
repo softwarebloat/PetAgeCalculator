@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Spinner;
@@ -16,7 +17,9 @@ public class MainActivity extends AppCompatActivity {
 	String years;
 	TextView mTextView, humanAge;
 	SeekBar age;
-	
+    int type = 0;
+    int seekbarValue;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -27,23 +30,15 @@ public class MainActivity extends AppCompatActivity {
 		age = (SeekBar) findViewById(R.id.set_age);
 		mTextView = (TextView) findViewById(R.id.textView1);
 		humanAge = (TextView) findViewById(R.id.human_age);
+
+
 		
-		final Spinner spinner = (Spinner) findViewById(R.id.choose_animal);
-		// Create an ArrayAdapter using the string array and a default spinner layout
-		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-		        R.array.animals, android.R.layout.simple_spinner_item);
-		// Specify the layout to use when the list of choices appears
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		// Apply the adapter to the spinner		
-		spinner.setAdapter(adapter);
+		//Button button = (Button) findViewById(R.id.calc_button);
 		
-		Button button = (Button) findViewById(R.id.calc_button);
-		
-		button.setOnClickListener(new View.OnClickListener() {
+		/*button.setOnClickListener(new View.OnClickListener() {
 		    public void onClick(View v) {
-		       long type = spinner.getSelectedItemId();
 		       int seekbarValue = age.getProgress();
-		       
+
 		       if(seekbarValue < 1){
 		    	   //text.setError(getText(R.string.years_text_error));
 		    	   Toast.makeText(getApplicationContext(), R.string.years_text_error, Toast.LENGTH_SHORT).show();
@@ -56,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
 		       else{
 		    	   calculateYears(v, type, seekbarValue); //perchè serve la view???
 		       }
-		      
+
 		    }
-		});
+		});*/
 
 		
 		age.setOnSeekBarChangeListener(new OnSeekBarChangeListener(){
@@ -66,20 +61,25 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onProgressChanged(SeekBar seekBar, int progressValue, boolean fromUser) {
 				// TODO Auto-generated method stub
-				progress = progressValue;
-				humanAge.setText(String.valueOf(progress));
+
+				humanAge.setText(String.valueOf(progressValue));
+                //int seekbarValue = age.getProgress();
+                //Toast.makeText(getApplicationContext(), "changing seekbar progress", Toast.LENGTH_SHORT).show();
+
 			}
 
 			@Override
 			public void onStartTrackingTouch(SeekBar seekBar) {
 				// TODO Auto-generated method stub
-				
+                //Toast.makeText(getApplicationContext(), "Touching seekbar", Toast.LENGTH_SHORT).show();
 			}
 
 			@Override
 			public void onStopTrackingTouch(SeekBar seekBar) {
 				// TODO Auto-generated method stub
-				
+                //Toast.makeText(getApplicationContext(), "stopping seekbar progress", Toast.LENGTH_SHORT).show();
+                seekbarValue = age.getProgress();
+                calculateYears(type, seekbarValue);
 			}
 			
 		});
@@ -87,14 +87,40 @@ public class MainActivity extends AppCompatActivity {
 		
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
+	public void RadioClicked(View view){
+		//Is the button checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        switch (view.getId()){
+            case R.id.radio_dog:
+                if(checked)
+                    type = 0;
+                    //Toast.makeText(getApplicationContext(), String.valueOf(type), Toast.LENGTH_SHORT).show();
+                    calculateYears(type, seekbarValue);
+                break;
+
+            case R.id.radio_cat:
+                if(checked)
+                    type = 1;
+                    //Toast.makeText(getApplicationContext(), String.valueOf(type), Toast.LENGTH_SHORT).show();
+                    calculateYears(type, seekbarValue);
+                break;
+
+            case R.id.radio_rabbit:
+                if(checked)
+                    type = 2;
+                    calculateYears(type, seekbarValue);
+                break;
+
+            case R.id.radio_horse:
+                if(checked)
+                    type = 3;
+                    calculateYears(type, seekbarValue);
+                break;
+        }
 	}
 
-	public void calculateYears(View view, long animal_type, int years){
+	public void calculateYears(int animal_type, int years){
 		
 		int total=0;
 		int horse_years[] = {2,8,13,17,20};
