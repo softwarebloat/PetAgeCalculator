@@ -9,14 +9,6 @@
 	<string name="button_calculate">Calculate</string>
 	<string name="human_age_text">Human Age</string>
 	<string name="years_text_error">Insert an age</string>
-	<string name="bunny_text_error">Can\'t calculate...</string>
-
-	<string-array name="animals">
-	    <item>Dog</item>
-	    <item>Cat</item>
-	    <item>Rabbit</item>
-	    <item>Horse</item>
-	</string-array>
-
+	<string name="bunny_text_error">Can\'t calculate&#8230;</string>
 
 </resources>

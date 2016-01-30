@@ -9,13 +9,6 @@
 	<string name="button_calculate">Calcola</string>
 	<string name="human_age_text">Anni umani</string>
 	<string name="years_text_error">Inserisci gli anni</string>
-	<string name="bunny_text_error">Non riesco a calcolare...</string>
-	
-	<string-array name="animals">
-	    <item>Cane</item>
-	    <item>Gatto</item>
-	    <item>Coniglio</item>
-	    <item>Cavallo</item>
-	</string-array>
-	
+	<string name="bunny_text_error">Non riesco a calcolare&#8230;</string>
+
 </resources>

@@ -17,9 +17,8 @@
             android:id="@+id/textView1"
             android:layout_width="match_parent"
             android:layout_height="420dp"
-
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="100sp"
+            android:textSize="130sp"
             android:textColor="#ffffff"
             android:gravity="center_horizontal" />
 
@@ -39,7 +38,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
-                    android:text="dog"
+                    android:background="@drawable/ic_cane"
+                    android:button="@android:color/transparent"
                     android:onClick="RadioClicked"
                     android:checked="true"/>
 
@@ -48,7 +48,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
-                    android:text="cat"
+                    android:background="@drawable/ic_gatto"
+                    android:button="@android:color/transparent"
                     android:onClick="RadioClicked" />
 
                 <RadioButton android:id="@+id/radio_rabbit"
@@ -56,7 +57,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
-                    android:text="rabbit"
+                    android:background="@drawable/ic_coniglio"
+                    android:button="@android:color/transparent"
                     android:onClick="RadioClicked"/>
 
                 <RadioButton android:id="@+id/radio_horse"
@@ -64,9 +66,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
-                    android:text="horse"
+                    android:background="@drawable/ic_cavallo"
+                    android:button="@android:color/transparent"
                     android:onClick="RadioClicked"/>
-
 
             </RadioGroup>
         </HorizontalScrollView>
@@ -79,6 +81,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#ffffff"
+        android:text="0"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
         android:layout_alignParentBottom="true"

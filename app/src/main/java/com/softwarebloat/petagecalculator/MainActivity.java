@@ -158,6 +158,9 @@ public class MainActivity extends AppCompatActivity {
 			if(years == 0)
                 total = 0;
 
+			else if(years > 20)
+                Toast.makeText(getApplicationContext(), R.string.bunny_text_error, Toast.LENGTH_SHORT).show();
+
             else
 			    total = bunny_years[years-1];
 		}
