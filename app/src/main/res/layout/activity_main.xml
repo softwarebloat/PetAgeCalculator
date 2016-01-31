@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
@@ -6,75 +6,72 @@
     android:orientation="vertical"
     android:weightSum="1">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_above="@+id/human_age">
+
 
 
         <TextView
             android:id="@+id/textView1"
             android:layout_width="match_parent"
-            android:layout_height="420dp"
+            android:layout_height="0dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="130sp"
             android:textColor="#ffffff"
-            android:gravity="center_horizontal" />
+            android:gravity="center_horizontal"
+            android:layout_weight="1"/>
 
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/horizontalScrollView"
-            android:scrollbars="none">
 
-            <RadioGroup
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/horizontalScrollView"
+        android:scrollbars="none">
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton android:id="@+id/radio_dog"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/ic_dog"
+                android:button="@android:color/transparent"
+                android:onClick="RadioClicked"
+                android:checked="true" />
 
-                <RadioButton android:id="@+id/radio_dog"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:background="@drawable/ic_cane"
-                    android:button="@android:color/transparent"
-                    android:onClick="RadioClicked"
-                    android:checked="true"/>
+            <RadioButton android:id="@+id/radio_cat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/ic_cat"
+                android:button="@android:color/transparent"
+                android:onClick="RadioClicked" />
 
-                <RadioButton android:id="@+id/radio_cat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:background="@drawable/ic_gatto"
-                    android:button="@android:color/transparent"
-                    android:onClick="RadioClicked" />
+            <RadioButton android:id="@+id/radio_rabbit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/ic_rabbit"
+                android:button="@android:color/transparent"
+                android:onClick="RadioClicked"/>
 
-                <RadioButton android:id="@+id/radio_rabbit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:background="@drawable/ic_coniglio"
-                    android:button="@android:color/transparent"
-                    android:onClick="RadioClicked"/>
+            <RadioButton android:id="@+id/radio_horse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/ic_horse"
+                android:button="@android:color/transparent"
+                android:onClick="RadioClicked"/>
 
-                <RadioButton android:id="@+id/radio_horse"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:background="@drawable/ic_cavallo"
-                    android:button="@android:color/transparent"
-                    android:onClick="RadioClicked"/>
-
-            </RadioGroup>
-        </HorizontalScrollView>
-    </LinearLayout>
-
-
+        </RadioGroup>
+    </HorizontalScrollView>
 
     <TextView
         android:id="@+id/human_age"
@@ -84,16 +81,16 @@
         android:text="0"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="65dp"/>
+
+        android:layout_marginBottom="15dp"/>
 
     <SeekBar
         android:id="@+id/set_age"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:max="30"
-        android:layout_alignParentBottom="true"
+
         android:layout_marginBottom="35dp"/>
 
 
-</RelativeLayout>
+</LinearLayout>
