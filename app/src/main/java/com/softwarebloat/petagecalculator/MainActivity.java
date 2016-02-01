@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
                 total = 0;
             }
 
-			if(years > 0 && years < 5){
+			if(years > 0 && years <= 5){
 				total = horse_years[years-1];
 			}
 			
