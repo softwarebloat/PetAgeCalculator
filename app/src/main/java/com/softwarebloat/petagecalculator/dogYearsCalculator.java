@@ -3,7 +3,7 @@ package com.softwarebloat.petagecalculator;
 /**
  * Created by Nico on 3/7/16.
  */
-public class dogYearCalculator extends yearCalculator {
+public class dogYearsCalculator extends yearCalculator {
 
     @Override
     public int calculate(int years) {
