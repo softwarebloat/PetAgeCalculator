@@ -1,25 +1,19 @@
 package com.softwarebloat.petagecalculator;
 
-public class catYearsCalculator extends yearCalculator {
-
+public class catYearsCalculator extends yearCalculator
+{
     @Override
-    public int calculate(int years) {
-
-
-        if (years == 0) {
-            super.setAge(0);
+    public int calculate(int humanAge)
+    {
+        if (humanAge == 0) {
+            return 0;
         }
-        else if (years == 1){
-            super.setAge(15);
+        
+        if (humanAge == 1) {
+            return 15;   
         }
-        else if (years == 2){
-            super.setAge(25);
-        }
-        else {
-            super.setAge(25 + ((years) - 2) * 4);
-        }
-
-
-        return super.getAge();
+        
+        int petAge = humanAge - 2;
+        return petAge * 4 + 25;
     }
 }
