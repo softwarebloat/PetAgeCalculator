@@ -12,6 +12,6 @@ public class horseYearsCalculator extends yearCalculator
         }
         
         int petAge = humanAge - 4;
-        return petAge * 2.5 + 20;
+        return (int) (petAge * 2.5f + 20);
     }
 }
