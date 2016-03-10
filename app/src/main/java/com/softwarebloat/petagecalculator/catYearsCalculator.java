@@ -1,8 +1,5 @@
 package com.softwarebloat.petagecalculator;
 
-/**
- * Created by Nico on 3/9/16.
- */
 public class catYearsCalculator extends yearCalculator {
 
     @Override

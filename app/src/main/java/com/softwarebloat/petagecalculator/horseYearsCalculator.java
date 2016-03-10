@@ -1,8 +1,5 @@
 package com.softwarebloat.petagecalculator;
 
-/**
- * Created by Nico on 3/9/16.
- */
 public class horseYearsCalculator extends yearCalculator {
 
     private int horse_years[] = {2,8,13,17,20};
