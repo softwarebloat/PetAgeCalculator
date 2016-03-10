@@ -2,6 +2,10 @@ package com.softwarebloat.petagecalculator;
 
 public class catYearsCalculator extends yearCalculator
 {
+    public catYearsCalculator() {
+        setType(1);
+    }
+
     @Override
     public int calculate(int humanAge)
     {
