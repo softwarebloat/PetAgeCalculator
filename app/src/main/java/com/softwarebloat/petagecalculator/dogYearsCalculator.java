@@ -1,18 +1,15 @@
 package com.softwarebloat.petagecalculator;
 
-public class dogYearsCalculator extends yearCalculator {
-
+public class dogYearsCalculator extends yearCalculator
+{
     @Override
-    public int calculate(int years) {
-
-        if(years == 0) {
-            super.setAge(0);
+    public int calculate(int humanAge)
+    {
+        if (humanAge == 0) {
+            return 0;
         }
-        else{
-            super.setAge(24 + ((years)-2) * 4);
-        }
-
-        return super.getAge();
-
+        
+        int petAge = humanAge - 2;
+        return humanAge * 4 + 24;
     }
 }
