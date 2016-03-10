@@ -88,32 +88,26 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	public void RadioClicked(View view){
-		//Is the button checked?
-        boolean checked = ((RadioButton) view).isChecked();
 
         switch (view.getId()){
             case R.id.radio_dog:
-                if(checked)
                     type = 0;
                     //Toast.makeText(getApplicationContext(), String.valueOf(type), Toast.LENGTH_SHORT).show();
                     calculateYears(type, seekbarValue);
                 break;
 
             case R.id.radio_cat:
-                if(checked)
                     type = 1;
                     //Toast.makeText(getApplicationContext(), String.valueOf(type), Toast.LENGTH_SHORT).show();
                     calculateYears(type, seekbarValue);
                 break;
 
             case R.id.radio_rabbit:
-                if(checked)
                     type = 2;
                     calculateYears(type, seekbarValue);
                 break;
 
             case R.id.radio_horse:
-                if(checked)
                     type = 3;
                     calculateYears(type, seekbarValue);
                 break;
