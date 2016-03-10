@@ -121,67 +121,28 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	public void calculateYears(int animal_type, int years){
-		
-		int total=0;
-		int horse_years[] = {2,8,13,17,20};
-		int bunny_years[] = {21,27,33,39,45,51,57,63,69,75,81,87,93,96,105,111,117,123,129,135};
-		
-		//if is dog
-		if(animal_type==0){
-            if(years == 0) {
-                total = 0;
-            }
-            else{
-                total = 24 + ((years)-2) * 4;
-            }
-		}
-		
-		//if is cat
-		else if(animal_type==1){
-			if(years == 0) {
-                total = 0;
-            }
-            else if(years == 1){
-                total  = 15;
-            }
-            else if(years == 2){
-                total = 25;
-            }
+        int human_age = 0;
 
-            else {
-                total = 25 + ((years) - 2) * 4;
-            }
-		}
-		
-		//if is bunny
-		else if(animal_type==2){
-			if(years == 0)
-                total = 0;
+        switch (animal_type){
+            case 0: //if is dog
+                human_age = new dogYearsCalculator().calculate(years);
+                break;
 
-			else if(years > 20)
-                Toast.makeText(getApplicationContext(), R.string.bunny_text_error, Toast.LENGTH_SHORT).show();
+            case 1: //if is cat
+                human_age = new catYearsCalculator().calculate(years);
+                break;
 
-            else
-			    total = bunny_years[years-1];
-		}
-		
-		//if is horse
-		else if(animal_type==3){
-            if(years == 0){
-                total = 0;
-            }
+            case 2: //if is rabbit
+                human_age = new rabbitYearsCalculator().calculate(years);
+                break;
 
-			if(years > 0 && years <= 5){
-				total = horse_years[years-1];
-			}
-			
-			else if(years > 5){
-				float adult = 2.5f;
-				total = (int) (((years)-4) * adult + 20);
-			}
-		}
-		
-		mTextView.setText(String.valueOf(total));
+            case 3: //if is horse
+                human_age = new horseYearsCalculator().calculate(years);
+                break;
+        }
+
+
+		mTextView.setText(String.valueOf(human_age));
 	}
 	
 }
