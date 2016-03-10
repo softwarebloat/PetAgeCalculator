@@ -4,6 +4,10 @@ public class horseYearsCalculator extends yearCalculator
 {
     private int horseYears[] = {0, 2, 8, 13, 17, 20};
 
+    public horseYearsCalculator() {
+        setType(3);
+    }
+
     @Override
     public int calculate(int humanAge)
     {
