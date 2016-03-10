@@ -10,6 +10,6 @@ public class dogYearsCalculator extends yearCalculator
         }
         
         int petAge = humanAge - 2;
-        return humanAge * 4 + 24;
+        return petAge * 4 + 24;
     }
 }
