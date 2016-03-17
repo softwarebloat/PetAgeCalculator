@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     int type = 0;
     int seekbarValue;
 
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -106,7 +107,6 @@ public class MainActivity extends AppCompatActivity {
                     type = 2;
                     calculateYears(type, seekbarValue);
                 break;
-
             case R.id.radio_horse:
                     type = 3;
                     calculateYears(type, seekbarValue);
@@ -116,27 +116,10 @@ public class MainActivity extends AppCompatActivity {
 
 	public void calculateYears(int animal_type, int years){
         int human_age = 0;
+        yearsCalculatorFactory calculator = new yearsCalculatorFactory();
+        human_age = calculator.createCalculator(animal_type).calculate(years);
 
-        switch (animal_type){
-            case 0: //if is dog
-                human_age = new dogYearsCalculator().calculate(years);
-                break;
-
-            case 1: //if is cat
-                human_age = new catYearsCalculator().calculate(years);
-                break;
-
-            case 2: //if is rabbit
-                human_age = new rabbitYearsCalculator().calculate(years);
-                break;
-
-            case 3: //if is horse
-                human_age = new horseYearsCalculator().calculate(years);
-                break;
-        }
-
-
-		mTextView.setText(String.valueOf(human_age));
+        mTextView.setText(String.valueOf(human_age));
 	}
 	
 }
