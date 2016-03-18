@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Spinner;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 	SeekBar age;
     int type = 0;
     int seekbarValue;
+
 
 
 	@Override
@@ -84,37 +86,24 @@ public class MainActivity extends AppCompatActivity {
 			}
 			
 		});
-				
+
 		
 	}
 
-	public void RadioClicked(View view){
+    public void RadioClicked(View view)
+    {
 
-        switch (view.getId()){
-            case R.id.radio_dog:
-                    type = 0;
-                    //Toast.makeText(getApplicationContext(), String.valueOf(type), Toast.LENGTH_SHORT).show();
-                    calculateYears(type, seekbarValue);
-                break;
+        RadioGroup radioPets = (RadioGroup) findViewById(R.id.radio_pets);
+        int selectedPetId = radioPets.getCheckedRadioButtonId();
+        RadioButton selectedPet = (RadioButton) findViewById(selectedPetId);
+        int selectedPetType = Integer.parseInt((String) selectedPet.getTag());
 
-            case R.id.radio_cat:
-                    type = 1;
-                    //Toast.makeText(getApplicationContext(), String.valueOf(type), Toast.LENGTH_SHORT).show();
-                    calculateYears(type, seekbarValue);
-                break;
+        calculateYears(selectedPetType, seekbarValue);
+    }
 
-            case R.id.radio_rabbit:
-                    type = 2;
-                    calculateYears(type, seekbarValue);
-                break;
-            case R.id.radio_horse:
-                    type = 3;
-                    calculateYears(type, seekbarValue);
-                break;
-        }
-	}
 
-	public void calculateYears(int animal_type, int years){
+	public void calculateYears(int animal_type, int years)
+    {
         int human_age = 0;
         yearsCalculatorFactory calculator = new yearsCalculatorFactory();
         human_age = calculator.createCalculator(animal_type).calculate(years);
