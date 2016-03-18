@@ -29,11 +29,14 @@
         android:scrollbars="none">
 
         <RadioGroup
+            android:id="@+id/radio_pets"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <RadioButton android:id="@+id/radio_dog"
+            <RadioButton
+                android:id="@+id/radio_dog"
+                android:tag="0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -43,7 +46,9 @@
                 android:onClick="RadioClicked"
                 android:checked="true" />
 
-            <RadioButton android:id="@+id/radio_cat"
+            <RadioButton
+                android:id="@+id/radio_cat"
+                android:tag="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -52,7 +57,9 @@
                 android:button="@android:color/transparent"
                 android:onClick="RadioClicked" />
 
-            <RadioButton android:id="@+id/radio_rabbit"
+            <RadioButton
+                android:id="@+id/radio_rabbit"
+                android:tag="2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -61,7 +68,9 @@
                 android:button="@android:color/transparent"
                 android:onClick="RadioClicked"/>
 
-            <RadioButton android:id="@+id/radio_horse"
+            <RadioButton
+                android:id="@+id/radio_horse"
+                android:tag="3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
