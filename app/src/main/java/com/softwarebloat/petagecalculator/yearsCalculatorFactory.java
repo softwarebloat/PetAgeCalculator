@@ -3,7 +3,13 @@ package com.softwarebloat.petagecalculator;
 
 public class yearsCalculatorFactory {
 
-    private  yearCalculator animals[] = {new dogYearsCalculator(), new catYearsCalculator(), new horseYearsCalculator(), new rabbitYearsCalculator()};
+    private  yearCalculator animals[] = {
+            new dogYearsCalculator(),
+            new catYearsCalculator(),
+            new horseYearsCalculator(),
+            new rabbitYearsCalculator(),
+            new cowYearsCalculator()
+    };
 
     public yearCalculator createCalculator(int animal_type)
     {
