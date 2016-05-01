@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 	TextView mTextView, humanAge;
 	SeekBar age;
-    int type = 0;
+    int animalType;
     int seekbarValue;
 
 
@@ -43,21 +43,26 @@ public class MainActivity extends AppCompatActivity {
 			public void onStopTrackingTouch(SeekBar seekBar)
             {
                 seekbarValue = age.getProgress();
-                calculateYears(type, seekbarValue);
+                animalType = checkedAnimal();
+                calculateYears(animalType, seekbarValue);
 			}
 
 		});
 	}
 
-    public void RadioClicked(View view)
+    public int checkedAnimal()
     {
-
         RadioGroup radioPets = (RadioGroup) findViewById(R.id.radio_pets);
         int selectedPetId = radioPets.getCheckedRadioButtonId();
         RadioButton selectedPet = (RadioButton) findViewById(selectedPetId);
-        int selectedPetType = Integer.parseInt((String) selectedPet.getTag());
 
-        calculateYears(selectedPetType, seekbarValue);
+        return Integer.parseInt((String) selectedPet.getTag());
+    }
+
+    public void RadioClicked(View view)
+    {
+        animalType = checkedAnimal();
+        calculateYears(animalType, seekbarValue);
     }
 
 
